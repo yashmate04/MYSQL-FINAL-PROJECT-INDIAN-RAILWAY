@@ -56,8 +56,8 @@ The database is named **`IndianRailway`** and contains **25 interrelated tables*
 ---
 
 ## 🌐 Mindmap / Visual Overview
-Here is a mindmap that shows the conceptual design and relationships of the schema:  
-[Mindmap for Phase 1 – Indian Railway Database](https://notebooklm.google.com/notebook/a3dc5040-63dd-4f20-96f2-172359aedc74)  
+![Uploading NotebookLM Mind Map (PHASE 1).png…]()
+
 
 ---
 
