@@ -9,9 +9,9 @@ The project is implemented using **MySQL** and demonstrates schema creation, dat
 ---
 
 ## 🎯 Objectives
-- To design a normalized and scalable database for managing Indian Railways.
-- To capture real-world entities such as passengers, trains, stations, staff, routes, and freight services.
-- To implement CRUD operations (Create, Read, Update, Delete).
+- To design a normalized and scalable database for managing Indian Railways.  
+- To capture real-world entities such as passengers, trains, stations, staff, routes, and freight services.  
+- To implement CRUD operations (Create, Read, Update, Delete).  
 - To provide sample data for testing and future system integration.
 
 ---
@@ -55,6 +55,12 @@ The database is named **`IndianRailway`** and contains **25 interrelated tables*
 
 ---
 
+## 🌐 Mindmap / Visual Overview
+Here is a mindmap that shows the conceptual design and relationships of the schema:  
+[Mindmap for Phase 1 – Indian Railway Database](https://notebooklm.google.com/notebook/a3dc5040-63dd-4f20-96f2-172359aedc74)  
+
+---
+
 ## ⚙️ Technologies Used
 - **Database**: MySQL  
 - **Language**: SQL (DDL, DML, DQL)  
@@ -67,4 +73,3 @@ The database is named **`IndianRailway`** and contains **25 interrelated tables*
    ```bash
    git clone https://github.com/your-username/indian-railway-db-phase1.git
    cd indian-railway-db-phase1
-
