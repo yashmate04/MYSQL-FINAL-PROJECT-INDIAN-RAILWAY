@@ -56,7 +56,9 @@ The database is named **`IndianRailway`** and contains **25 interrelated tables*
 ---
 
 ## 🌐 Mindmap / Visual Overview
-![Uploading NotebookLM Mind Map (PHASE 1).png…]()
+<img width="5046" height="18535" alt="NotebookLM Mind Map (PHASE 1)" src="https://github.com/user-attachments/assets/d834a3cb-2be3-40c1-aaa8-3a71e37c5fe1" />
+
+
 
 
 ---
