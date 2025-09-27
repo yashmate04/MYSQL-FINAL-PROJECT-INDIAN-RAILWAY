@@ -1,173 +1,141 @@
-Here is a `README.md` file you can use for your Phase 5 GitHub repository.
+# Indian Railway Management System - SQL Scripts
+
+This repository contains a comprehensive set of SQL scripts for managing an Indian Railway database. These scripts are organized by topic, covering various aspects of database management, from schema design and data manipulation to advanced queries and stored procedures.
 
 -----
 
-# Consulting Firm Management System: Phase 5 - Advanced SQL
+## **Table of Contents**
 
-This repository contains the SQL scripts for **Phase 5** of the Consulting Firm Management System database project. This phase focuses on demonstrating a comprehensive range of advanced SQL concepts, including **Data Definition Language (DDL)**, **Data Manipulation Language (DML)**, **Data Query Language (DQL)**, and advanced features like **stored procedures, triggers, transactions, and window functions**.
-
-The scripts are organized into logical sections to showcase different aspects of SQL functionality.
-
-## Table of Contents
-
-  - [DDL (Data Definition Language)](https://www.google.com/search?q=%23ddl-data-definition-language)
-  - [DML (Data Manipulation Language)](https://www.google.com/search?q=%23dml-data-manipulation-language)
-  - [DQL (Data Query Language)](https://www.google.com/search?q=%23dql-data-query-language)
-  - [Clauses & Operators](https://www.google.com/search?q=%23clauses--operators)
-  - [Constraints & Cascades](https://www.google.com/search?q=%23constraints--cascades)
-  - [Joins](https://www.google.com/search?q=%23joins)
-  - [Subqueries](https://www.google.com/search?q=%23subqueries)
-  - [Functions](https://www.google.com/search?q=%23functions)
-  - [Views & Common Table Expressions (CTE)](https://www.google.com/search?q=%23views--common-table-expressions-cte)
-  - [Stored Procedures](https://www.google.com/search?q=%23stored-procedures)
-  - [Window Functions](https://www.google.com/search?q=%23window-functions)
-  - [Transactions](https://www.google.com/search?q=%23transactions)
-  - [Triggers](https://www.google.com/search?q=%23triggers)
+1.  [DDL: Data Definition Language](https://www.google.com/search?q=%23ddl-data-definition-language)
+2.  [DML: Data Manipulation Language](https://www.google.com/search?q=%23dml-data-manipulation-language)
+3.  [DQL: Data Query Language](https://www.google.com/search?q=%23dql-data-query-language)
+4.  [Advanced DQL with Operators](https://www.google.com/search?q=%23advanced-dql-with-operators)
+5.  [Constraints and Keys](https://www.google.com/search?q=%23constraints-and-keys)
+6.  [SQL Joins](https://www.google.com/search?q=%23sql-joins)
+7.  [Subqueries](https://www.google.com/search?q=%23subqueries)
+8.  [SQL Functions](https://www.google.com/search?q=%23sql-functions)
+9.  [Views and CTEs](https://www.google.com/search?q=%23views-and-ctes)
+10. [Stored Procedures](https://www.google.com/search?q=%23stored-procedures)
+11. [Window Functions](https://www.google.com/search?q=%23window-functions)
+12. [Transactions](https://www.google.com/search?q=%23transactions)
+13. [Triggers](https://www.google.com/search?q=%23triggers)
 
 -----
 
-## DDL (Data Definition Language)
+### **DDL: Data Definition Language**
 
-This section contains 10 queries for managing database structure.
+This section includes scripts for creating and modifying the database schema.
 
-  - `CREATE TABLE`: Creates new tables, such as `EmployeeCertifications` and `OfficeLocations`.
-  - `ALTER TABLE`: Modifies existing tables to add columns (`MiddleName`), drop columns (`Objectives`), or add constraints (`UNIQUE`, `CHECK`, `FOREIGN KEY`).
-  - `CREATE INDEX`: Creates an index on the `Projects` table to optimize query performance.
-  - `RENAME TABLE`: Renames the `Trainings` table to `TrainingPrograms` for better clarity.
-  - `DROP TABLE`: Demonstrates how to drop a table if it exists.
+  - **`CREATE TABLE`**: Creates the `Alerts` table.
+  - **`ALTER TABLE`**: Adds and modifies columns (`DriverID`, `Contact`), and renames tables (`Complaints` to `PassengerComplaints`).
+  - **`DROP`**: Deletes tables and columns (`Alerts`, `Remarks`).
+  - **`PRIMARY KEY`**: Adds a primary key to the `Parcels` table.
+  - **`NOT NULL`**: Adds a `NOT NULL` constraint to the `RouteStatus` column.
+  - **`CREATE INDEX`**: Creates an index on the `TrainSchedules` table for faster lookups.
 
-## DML (Data Manipulation Language)
+### **DML: Data Manipulation Language**
 
-This section includes 10 queries for manipulating data within the tables.
+These scripts focus on managing the data within the tables.
 
-  - `INSERT INTO`: Inserts single and bulk records for consultants, clients, projects, and timesheets.
-  - `UPDATE`: Modifies data, such as updating a consultant's salary or a project's status.
-  - `DELETE FROM`: Removes data based on specified conditions, like deleting old timesheet entries or resources marked as 'Damaged'.
+  - **`INSERT`**: Inserts single and multiple records into the `Stations` and `Passengers` tables.
+  - **`UPDATE`**: Modifies existing records, such as changing a train's status or updating fares based on a condition.
+  - **`DELETE`**: Removes records, including a single record by ID or multiple records based on a condition.
 
------
+### **DQL: Data Query Language**
 
-## DQL (Data Query Language)
+This section contains basic queries to retrieve data from the database.
 
-This section includes 10 fundamental queries for retrieving and analyzing data.
+  - **`SELECT`**: Retrieves data based on simple conditions, such as `MaxSpeed` or `State`.
+  - **`GROUP BY`**: Groups data to calculate aggregates like `SUM` or `COUNT`.
+  - **`ORDER BY`**: Sorts the results of a query.
+  - **`LIMIT`**: Restricts the number of rows returned.
+  - **`MIN/MAX`**: Finds the minimum and maximum values in a column.
 
-  - `SELECT`: Retrieves data from various tables.
-  - `WHERE`: Filters results based on criteria (e.g., active consultants, projects from a specific year).
-  - `ORDER BY`: Sorts query results.
-  - `COUNT`, `SUM`: Uses aggregate functions to count projects per client or sum total hours worked.
-  - `JOIN`: Combines data from multiple tables.
-  - `GROUP BY`: Groups rows that have the same values to perform summary operations.
+### **Advanced DQL with Operators**
 
------
+These queries use more complex operators for data filtering.
 
-## Clauses & Operators
+  - **`IN`**: Selects records that match any value in a list (e.g., `Role IN ('Ticket Checker', 'Attendant')`).
+  - **`NOT IN`**: Selects records that do not match any value in a list.
+  - **`LIKE`**: Performs pattern matching (e.g., `City LIKE 'M%i'`).
+  - **`BETWEEN`**: Selects values within a specified range.
+  - **`ANY/ALL`**: Compares a value to every value in a subquery result.
 
-This section highlights 10 queries using various SQL clauses and operators for more complex filtering.
+### **Constraints and Keys**
 
-  - `AND`, `OR`: Combines multiple conditions.
-  - `BETWEEN`: Filters data within a specified range (e.g., project budgets).
-  - `LIKE`: Performs pattern matching (`'A%'`).
-  - `IN`: Specifies multiple possible values in a `WHERE` clause.
-  - `ANY`, `ALL`: Compares a value to a list of values returned by a subquery.
-  - `NOT LIKE`: Excludes records based on a pattern.
+Scripts for enforcing data integrity and relationships between tables.
 
------
+  - **`UNIQUE`**: Ensures all values in a column are unique.
+  - **`CHECK`**: Enforces a condition on the values in a column.
+  - **`PRIMARY KEY`**: Defines a column or set of columns that uniquely identifies each row.
+  - **`FOREIGN KEY`**: Establishes relationships between tables with different `ON DELETE` and `ON UPDATE` actions (`CASCADE`, `SET NULL`, `RESTRICT`).
 
-## Constraints & Cascades
+### **SQL Joins**
 
-This section demonstrates the use of constraints, particularly focusing on foreign key relationships and cascade actions.
+This section demonstrates how to combine rows from multiple tables.
 
-  - `ON DELETE CASCADE`: Deletes dependent child records when a parent record is deleted (e.g., deleting a project also deletes its tasks).
-  - `ON UPDATE CASCADE`: Updates dependent child records when a parent record is updated.
-  - `ON DELETE SET NULL`: Sets the foreign key to `NULL` instead of deleting the child record.
-  - `PRIMARY KEY`: Creates composite primary keys on junction tables.
-  - Self-referencing foreign keys to create a hierarchical structure.
+  - **`INNER JOIN`**: Returns records with matching values in both tables.
+  - **`LEFT JOIN`**: Returns all records from the left table and the matched records from the right table.
+  - **`RIGHT JOIN`**: Returns all records from the right table and the matched records from the left table.
+  - **`FULL OUTER JOIN`**: (Simulated with `UNION`) Returns all records when there is a match in either the left or right table.
+  - **`SELF JOIN`**: Joins a table to itself to compare records within the same table.
 
------
+### **Subqueries**
 
-## Joins
+Scripts using subqueries to perform complex queries.
 
-This section contains 10 queries demonstrating various types of SQL joins to combine data from multiple tables.
+  - **Nested Subquery**: A subquery used within the `WHERE` clause of the outer query.
+  - **Correlated Subquery**: A subquery that depends on the outer query for its values.
+  - **`EXISTS`**: Used to check for the existence of any rows in a subquery.
 
-  - `INNER JOIN`: Retrieves matching records from two tables.
-  - `LEFT JOIN`: Retrieves all records from the left table and matching records from the right.
-  - `RIGHT JOIN`: Retrieves all records from the right table and matching records from the left.
-  - `SELF JOIN`: Joins a table to itself to find related records within the same table.
-  - `UNION`: Combines the result sets of two `SELECT` statements (used here to simulate a `FULL OUTER JOIN`).
+### **SQL Functions**
 
------
+This section covers the use of built-in functions.
 
-## Subqueries
+  - **Aggregate Functions**: `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX` for performing calculations on sets of rows.
+  - **Scalar Functions**: `UPPER`, `LOWER`, `LENGTH`, `CONCAT`, and `TRIM` for operating on single values.
 
-This section showcases 10 queries using subqueries to perform operations that cannot be done with simple `WHERE` clauses.
+### **Views and CTEs**
 
-  - `Scalar Subquery`: Returns a single value (e.g., `WHERE Budget > (SELECT AVG(Budget) FROM Projects)`).
-  - `Correlated Subquery`: A subquery that depends on the outer query (e.g., `WHERE c.Salary > (SELECT AVG(c2.Salary) FROM Consultants c2 WHERE c2.Specialization = c.Specialization)`).
-  - `EXISTS` and `NOT EXISTS`: Checks for the existence of rows returned by a subquery.
-  - `ANY` and `ALL`: Used with subqueries to compare against multiple values.
+Scripts for creating reusable query objects.
 
------
+  - **`CREATE VIEW`**: Creates a virtual table based on the result of a `SELECT` statement.
+  - **`WITH (CTE)`**: Defines a temporary named result set that exists within the scope of a single query.
+  - **`ALTER VIEW`**: Modifies an existing view.
+  - **`DROP VIEW`**: Deletes a view.
 
-## Functions
+### **Stored Procedures**
 
-This section demonstrates 10 queries using built-in SQL functions for data manipulation and aggregation.
+This section contains scripts for creating and calling stored procedures.
 
-  - **Aggregate Functions**: `COUNT`, `SUM`, `AVG`, `MAX`.
-  - **String Functions**: `UPPER`, `LOWER`, `LENGTH`, `CONCAT`.
-  - **Date/Time Functions**: `YEAR`, `CURDATE`, `DATEDIFF`, `DATE_SUB`.
+  - **`CREATE PROCEDURE`**: Defines a reusable set of SQL statements.
+  - **`CALL`**: Executes a stored procedure with given parameters.
 
------
+### **Window Functions**
 
-## Views & Common Table Expressions (CTE)
+Scripts using window functions to perform calculations across a set of table rows.
 
-This section includes 10 queries for creating and using views and CTEs to simplify complex queries and improve readability.
+  - **`ROW_NUMBER()`**: Assigns a unique, sequential integer to each row.
+  - **`RANK()`**: Ranks rows within a partition, with ties receiving the same rank.
+  - **`DENSE_RANK()`**: Similar to `RANK()`, but without gaps in the ranking sequence.
+  - **`LEAD()`**: Accesses data from a subsequent row in the result set.
+  - **`LAG()`**: Accesses data from a previous row in the result set.
 
-  - `CREATE VIEW`: Creates virtual tables, such as `ConsultantInfo` and `ProjectSummary`.
-  - `WITH ... AS`: Defines a temporary, named result set for use within a single query.
-  - `RECURSIVE CTE`: Demonstrates a recursive CTE to generate a sequence of numbers.
+### **Transactions**
 
------
+These scripts demonstrate how to group SQL statements into a single, all-or-nothing unit of work.
 
-## Stored Procedures
+  - **`START TRANSACTION`**: Begins a new transaction.
+  - **`COMMIT`**: Saves all changes made during the transaction.
+  - **`ROLLBACK`**: Undoes all changes since the last `START TRANSACTION` or `SAVEPOINT`.
+  - **`SAVEPOINT`**: Sets a marker within a transaction to which you can roll back.
 
-This section contains 5 examples of stored procedures to encapsulate and reuse SQL logic.
+### **Triggers**
 
-  - Procedures to `AddClient`, `UpdateProjectStatus`, and `DeleteConsultant`.
-  - A procedure with an `OUT` parameter to return the total invoice amount for a client.
-  - A procedure to insert a new timesheet entry.
+Scripts for creating and managing triggers, which are special stored procedures that are automatically executed in response to certain events on a table.
 
------
+  - **`BEFORE/AFTER INSERT`**: Executes before or after a new record is inserted.
+  - **`BEFORE/AFTER UPDATE`**: Executes before or after an existing record is updated.
+  - **`AFTER DELETE`**: Executes after a record is deleted.
 
-## Window Functions
-
-This section provides 5 queries using window functions to perform calculations across a set of table rows.
-
-  - `ROW_NUMBER()`: Assigns a unique row number.
-  - `RANK()`: Assigns a rank to each row within its partition.
-  - `LEAD()` and `LAG()`: Accesses data from a subsequent or previous row in the same result set.
-  - `PARTITION BY`: Divides the query result set into partitions for independent processing by the window function.
-
------
-
-## Transactions
-
-This section includes 5 queries to manage transactions, ensuring data integrity through `COMMIT` and `ROLLBACK`.
-
-  - `START TRANSACTION`: Begins a new transaction.
-  - `COMMIT`: Saves changes permanently.
-  - `ROLLBACK`: Undoes all changes since the last `COMMIT` or `START TRANSACTION`.
-  - `SAVEPOINT`: Sets a temporary placeholder to which you can `ROLLBACK` a part of the transaction.
-
------
-
-## Triggers
-
-This section contains 5 examples of triggers to automate actions based on database events (`INSERT`, `UPDATE`, `DELETE`).
-
-  - **`AFTER INSERT`**: Automatically updates a project budget when a new timesheet entry is added.
-  - **`BEFORE UPDATE`**: Prevents a project's budget from being drastically reduced.
-  - **`AFTER DELETE`**: Logs deleted client IDs to an audit table.
-  - **`AFTER UPDATE`**: Marks an invoice as "Paid" when a payment status is updated to "Completed".
-  - **`BEFORE INSERT`**: Sets a default value for a column if none is provided.
-
-
-
+Feel free to explore and use these scripts as a reference for database management and querying in a railway context.
