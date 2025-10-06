@@ -42,10 +42,9 @@ create database IndianRailway;
 use IndianRailway;
 
 -- Delete all records use it
-Drop Table IndianRailway;
+Drop Database IndianRailway;
 -- --------------------------------------------- Database Analysis -----------------------------------------------------
 
--- Table 1: Stations
 CREATE TABLE Stations (
     StationID INT PRIMARY KEY AUTO_INCREMENT,
     StationName VARCHAR(100),
@@ -54,13 +53,12 @@ CREATE TABLE Stations (
     State VARCHAR(50),
     PlatformCount INT,
     Zone VARCHAR(50),
-    OpenedYear YEAR,
+    OpenedYear SMALLINT,   -- changed from YEAR to SMALLINT
     Electrified BOOLEAN,
     Remarks TEXT
 );
 
--- Insert 20 records into Stations
-INSERT INTO Stations (stationid,StationName, Code, City, State, PlatformCount,OpenedYear,Zone,Electrified, Remarks)
+INSERT INTO Stations (StationName, Code, City, State, PlatformCount, Zone, OpenedYear, Electrified, Remarks)
 VALUES
 ('Mumbai CST', 'CSTM', 'Mumbai', 'Maharashtra', 18, 'Central', 1853, TRUE, 'Major terminus'),
 ('Howrah Jn', 'HWH', 'Kolkata', 'West Bengal', 23, 'Eastern', 1854, TRUE, 'Oldest station'),
